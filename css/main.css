@@ -5,7 +5,55 @@
    ========================================================================== */
 
 
+.jumbotron {
+    min-height: 600px;
+    background: url('../img/desk-laptop.jpg') no-repeat center center;
+    color: white;
+    text-shadow: rgb(46, 46, 46) 0 4px 5px;
+}
 
+.jumbotron > .container > h1 {
+    margin-top: 200px;
+}
+
+@media screen and (min-width: 1400px) {
+  .jumbotron {
+    padding: 48px 0;
+  }
+  .container .jumbotron,
+  .container-fluid .jumbotron {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  .jumbotron h1,
+  .jumbotron .h1 {
+    font-size: 63px;
+  }
+}
+
+.about-me {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 100;
+    border-top: solid 1px #ccc;
+    border-bottom: solid 1px #ccc;
+}
+
+.navbar-fixed-top {
+    top: 50px;
+}
+
+.intro {
+    top: 0;
+    position: fixed;
+    background-color: #1976d2;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding: 13px 0;
+    height: 50px;
+    width: 100%;
+}
 
 
 
