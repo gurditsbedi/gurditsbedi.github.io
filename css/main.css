@@ -3,7 +3,21 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+.navbar-fixed-top {
+    top: 50px;
+}
 
+.intro {
+    top: 0;
+    position: fixed;
+    background-color: #1976d2;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    padding: 13px 0;
+    height: 50px;
+    width: 100%;
+}
 
 .jumbotron {
     min-height: 600px;
@@ -31,40 +45,10 @@
   }
 }
 
-.about-me {
+.section-heading {
     display: inline-block;
     font-size: 50px;
     font-weight: 100;
     border-top: solid 1px #ccc;
     border-bottom: solid 1px #ccc;
 }
-
-.navbar-fixed-top {
-    top: 50px;
-}
-
-.intro {
-    top: 0;
-    position: fixed;
-    background-color: #1976d2;
-    text-align: center;
-    font-weight: bold;
-    color: white;
-    padding: 13px 0;
-    height: 50px;
-    width: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
