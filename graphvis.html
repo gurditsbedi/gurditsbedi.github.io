@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="js/d3.js"></script>
+    <script src="js/cola.v3.min.js"></script>
+    <script src="js/greuler.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <style type="text/css">
+        textarea {height: 400px !important; }
+        #block-container {text-align:center; }
+        #bloc, #demo {display:inline-block; vertical-align: top; }
+        body {margin-left: 1%;}
+        .howto { margin-left: 5%; width: 50%;}
+        pre { margin-right: 5%; width: 30%; }
+    </style>
+    <meta charset="utf-8">
+    <title>Graph Visualize</title>
+  </head>
+  <body>
+    <div id="bloc-container">
+      <div id="bloc">
+        <p>Node Label starts from
+        <select class="form-control" name="nodelabel" id="nodelabel">
+          <option value="zero">0</option>
+          <option value="one" selected>1</option>
+        </select></p>
+        <p>Graph type:
+        <select name="gtype" class="form-control" id="gtype">
+          <option value="directed">directed</option>
+          <option value="undirected" selected>undirected</option>
+        </select></p>
+        <textarea class="form-control" id="drop-zone" placeholder="Enter text or drag and drop the file"></textarea>
+        <br>
+        <button id="draw" class="btn btn-success btn-block">Draw</button>
+      </div>
+
+
+      <div id="bloc" class="howto">
+        <h1>Graph Visualizer for Competitive Coding.</h1>
+        <p>Chrome Browser Recommended.</p>
+        <p>This a simple in-browser app to display a graph. The data is entered in famous competitive coding format.</p>
+        <p>First line - contains two space-separated integers denoting number of vertices and edges.</p>
+        <p>In the following lines (amount of lines equal to the number of edges).</p>
+        <p>Each of the next lines will be containg 2 or 3 integer first being the source node, then destination node and 'optional' weight of the edge.</p>
+        <p>REFRESH the page to draw another graph.</p>
+        <p>Here are some examples.</p>
+
+        <pre class="pull-left">4 6
+1 4 1
+1 2 -1
+2 3 2
+1 2 -3
+4 4 6
+3 1 2</pre class="pull-right">
+        <pre>5 6
+1 2
+2 3
+4 5
+1 1
+3 4
+2 5 </pre>
+      <br>
+      <p>This app can also be used offline.</p>
+      <p>This app uses <a href="https://maurizzzio.github.io/greuler/#/">greuler</a> and <a href="http://getbootstrap.com/">Bootstrap</a>.</p>
+      <p>The app is provided "as is" and the author disclaims all warranties with regard to this app.</p>
+      <p>If some how this app stops to work. Report to me I will try to make it work again.</p>
+      <a href="https://twitter.com/gurditsbedi" class="twitter-follow-button" data-show-count="false">Follow @gurditsbedi</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+
+
+
+      <div id="demo"></div>
+    </div>
+    <script src="./js/graphvis.js"></script>
+  </body>
+</html>
