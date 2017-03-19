@@ -3,8 +3,8 @@ Body {
     display: flex;
     height: 100vh;
     justify-content: center;
-    align-items: center;*/
-    color: black;
+    align-items: center;
+    color: #333;
     text-align: center;
 }
 
@@ -18,10 +18,16 @@ Body {
 .links {
     font-family: 'Ubuntu', sans-serif;
     font-size: 3em;
-    color: #ccc !important;
 }
 
-ul {
+a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #999;
+    text-decoration: none;
 }
 
 ul>li {
