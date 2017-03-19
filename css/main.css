@@ -1,57 +1,30 @@
 
-
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-.intro {
-  top: 0;
-  position: fixed;
-  background-color: #1976d2;
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  padding: 13px 0;
-  height: 50px;
-  width: 100%;
+Body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;*/
+    color: black;
+    text-align: center;
 }
 
-.front-full-page {
-  height: 100vh;
-  background: url('../img/desk-laptop3.jpg') no-repeat center center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.name {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700;
+    font-size: 6em;
+    margin: 0 48px;
 }
 
-.front-full-page {
-  font-size: 3rem;
+.links {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3em;
+    color: #ccc !important;
 }
 
-
-@media screen and (min-width: 1400px) {
-  .jumbotron {
-    padding: 48px 0;
-  }
-  .container .jumbotron,
-  .container-fluid .jumbotron {
-    padding-right: 60px;
-    padding-left: 60px;
-  }
-  .jumbotron h1,
-  .jumbotron .h1 {
-    font-size: 63px;
-  }
+ul {
 }
 
-.section-heading {
-    display: inline-block;
-    font-size: 50px;
-    font-weight: 100;
-    border-top: solid 1px #ccc;
-    border-bottom: solid 1px #ccc;
-}
-
-.first-part {
-  font-size: 16px;
+ul>li {
+    display: inline;
+    margin: 30px;
 }
