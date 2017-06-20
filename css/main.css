@@ -1,18 +1,8 @@
 
-Body {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    text-align: center;
-}
-
 .name {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     font-size: 6em;
-    margin: 0 48px;
 }
 
 .links {
@@ -28,9 +18,4 @@ a {
 a:hover {
     color: #999;
     text-decoration: none;
-}
-
-ul>li {
-    display: inline;
-    margin: 30px;
 }
