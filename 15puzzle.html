@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>15Puzzle</title>
+    <style>
+        html {
+            font-size: 3em;
+        }
+        table {
+            text-align: center;
+        }
+        #puzzle {
+            table-layout: fixed;
+        }
+        #buttons {
+            border-collapse: collapse;
+        }
+        #puzzle, .puzzle-cell {
+            border: 1px solid black;
+        }
+        .play-button {
+            font-size: 64px;
+        }
+        button {
+            width: 84px;
+            height: 84px;
+        }
+    </style>
+</head>
+<body>
+    <table id="puzzle">
+        <col width="63px"> <col width="63px"> <col width="63px"> <col width="63px">
+        <tbody>
+        <tr> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> </tr>
+        <tr> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> </tr>
+        <tr> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> </tr>
+        <tr> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> <td class="puzzle-cell"></td> </tr>
+        </tbody>
+    </table>
+    <div id="status"></div>
+    <table id="buttons">
+        <tbody>
+            <tr>
+                <td class="play-button-cell"> <button id="reset-button" class="play-button">&#x21bb</button> </td>
+                <td class="play-button-cell"> <button id="up-button" class="play-button">&#x2191</button> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="play-button-cell"> <button id="left-button" class="play-button">&#x2190</button> </td>
+                <td class="play-button-cell"> <button id="down-button" class="play-button">&#x2193</button> </td>
+                <td class="play-button-cell"> <button id="right-button" class="play-button">&#x2192</button> </td>
+            </tr>
+        </tbody>
+    </table>
+<script>
+    // :param a - Array to be shuffled in place
+    function shuffleArray(a) {
+        for (let i = a.length; i; i--) {
+            let j = Math.floor(Math.random() * i);
+            [a[i - 1], a[j]] = [a[j], a[i - 1]];
+        }
+    };
+    // :param table = document.getElementsByTagName('td');
+    function initializePuzzle(tableTags) {
+        var a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 0];
+        shuffleArray(a);
+        for(var i=0; i < tableTags.length; i++)
+            tableTags[i].innerHTML = a[i];
+        makeZeroVanish();
+        checkPuzzleCompletion(tableTags);
+    };
+    function isPuzzleSolvable(tableTags) {
+        var tableValues = new Array();
+        tlen = tableTags.length;
+        for (var i = 0; i < tlen; i++)
+            tableValues.push(tableTags[i].innerHTML);
+        var matrixWidth = Math.sqrt(tlen);
+        var parity = 0, zeroRowPos = 0, rowNumber = 0;
+        for (var i = 0; i < tlen; i++) {
+            if (i % matrixWidth == 0)
+                rowNumber += 1;
+            if (tableValues[i] == 0) {
+                zeroPos = rowNumber;
+                continue;
+            }
+            for (var j = 0; j < i; j++) {
+                if (tableValues[i] > tableValues[j] && tableValues[j] != 0)
+                    parity += 1;
+            }
+        }
+        if (matrixWidth % 2 == 0) {
+            if (zeroRowPos % 2 == 0)
+                return parity % 2 != 0;
+            else
+                return parity % 2 == 0;
+        } else {
+            return parity % 2 == 0;
+        }
+    }
+    function generateSolvablePuzzle(tableTags) {
+        initializePuzzle(tableTags);
+        while (!isPuzzleSolvable(tableTags))
+            initializePuzzle(tableTags);
+    }
+    function showPuzzle(tableMatrix, tableTags) {
+        for(var i=0; i < tableMatrix.length; i++) {
+            for(var j=0; j < tableMatrix[i].length; j++) {
+                if (tableMatrix[i][j])
+                    tableTags[i*4+j].innerHTML = tableMatrix[i][j];
+                else
+                    tableTags[i*4+j].innerHTML = '0';
+            }
+        }
+        makeZeroVanish();
+    }
+    function checkPuzzleCompletion(tableTags) {
+        if (tableTags[tableTags.length-1]){
+            for(var i=0; i < tableTags.length-1; i++) {
+                if (tableTags[i].innerHTML != i+1) {
+                    document.getElementById('status').innerHTML = '';
+                    return false;
+                }
+            }
+        }
+        document.getElementById('status').innerHTML = 'Solved!';
+        return true;
+    }
+    function findPosition(tableMatrix, x) {
+        for(var i=0; i < tableMatrix.length; i++) {
+            for(var j=0; j < tableMatrix[i].length; j++) {
+                if (tableMatrix[i][j] == x)
+                    return {x: j, y:i}
+            }
+        }
+    };
+    function shiftEmpty(tableMatrix, direction) {
+        xPos = findPosition(tableMatrix, 0);
+        var i = xPos.y, j = xPos.x, x = direction.x, y = direction.y;
+        // Border checking
+        if ((j == 0 && x == -1 && y==0) || (i == 0 && x == 0 && y==1) || (j == 3 && x == 1 && y==0) || (i == 3 && x == 0 && y==-1) )
+            return
+        s1 = tableMatrix[i][j];
+        s2 = tableMatrix[i-y][j+x];
+        tmp = tableMatrix[i][j];
+        tableMatrix[i][j] = tableMatrix[i-y][j+x];
+        tableMatrix[i-y][j+x] = tmp;
+        showPuzzle(tableMatrix, tableTags);
+        checkPuzzleCompletion(tableTags);
+    };
+    function makeZeroVanish() {
+        for(var i=0; i < tableTags.length; i++) {
+            if (tableTags[i].innerHTML == 0)
+                tableTags[i].style.color = 'white';
+            else
+                tableTags[i].style.color = 'black';
+        }
+    };
+    function tableToMatrix() {
+        for(var i=0; i < tableMatrix.length; i++) {
+            for(var j=0; j < tableMatrix[i].length; j++)
+                tableMatrix[i][j] = tableTags[i*4+j].innerHTML;
+        }
+    };
+    window.addEventListener("keyup", function(e){
+        var direction = {x:0, y:0};
+        switch (e.keyCode) {
+            case 37: direction = {x: 1, y: 0}; //right
+            break;
+            case 38: direction = {x: 0, y: -1}; //down
+            break;
+            case 39: direction = {x: -1, y: 0}; //left
+            break;
+            case 40: direction = {x: 0, y: 1}; //up
+            break;
+        }
+        if (direction.x | direction.y)
+            shiftEmpty(tableMatrix, direction);
+    });
+    document.getElementById('right-button').addEventListener('click', function(e){
+        shiftEmpty(tableMatrix, {x: -1, y: 0});
+    });
+    document.getElementById('down-button').addEventListener('click', function(e){
+        shiftEmpty(tableMatrix, {x: 0, y: 1});
+    });
+    document.getElementById('left-button').addEventListener('click', function(e){
+        shiftEmpty(tableMatrix, {x: 1, y: 0});
+    });
+    document.getElementById('up-button').addEventListener('click', function(e){
+        shiftEmpty(tableMatrix, {x: 0, y: -1});
+    });
+    document.getElementById('reset-button').addEventListener('click', function(e){
+        generateSolvablePuzzle(tableTags);
+        tableToMatrix();
+    });
+    var tableTags = document.getElementsByClassName('puzzle-cell');
+    var tableMatrix = [[0,0,0,0], [0,0,0,0], [0,0,0,0], [0,0,0,0]];
+    generateSolvablePuzzle(tableTags);
+    tableToMatrix();
+
+</script>
+</body>
+</html>
