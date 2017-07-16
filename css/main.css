@@ -3,6 +3,7 @@
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     font-size: 6em;
+    color: #333;
 }
 
 .links {
@@ -11,11 +12,11 @@
 }
 
 a {
-    color: #ccc;
+    color: #888;
     text-decoration: none;
 }
 
 a:hover {
-    color: #999;
+    color: #666;
     text-decoration: none;
 }
