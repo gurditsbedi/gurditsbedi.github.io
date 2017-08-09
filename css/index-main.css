@@ -1,0 +1,36 @@
+.name {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 96px;
+  color: #333;
+  margin-bottom: 0;
+}
+
+.bio {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 24px;
+  color: #333;
+}
+
+.links {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 48px;
+}
+
+.line-icon {
+  padding: 50px 50px;
+}
+
+.link-icon-group {
+  white-space: nowrap;
+}
+
+a {
+  color: #888;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+  text-decoration: none;
+}
