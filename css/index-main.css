@@ -1,5 +1,5 @@
 .name {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
   font-size: 96px;
   color: #333;
@@ -7,13 +7,13 @@
 }
 
 .bio {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 24px;
   color: #333;
 }
 
 .links {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 48px;
 }
 
