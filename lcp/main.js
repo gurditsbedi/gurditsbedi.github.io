@@ -1,5 +1,3 @@
-// Vue.config.devtools = true;
-
 var app = new Vue({
     el: '#app',
     data: {
@@ -52,30 +50,3 @@ var app = new Vue({
         }
     }
 })
-/*
-var svgText = document.getElementById("myViewer").outerHTML;
-            var myCanvas = document.getElementById("canvas");
-var ctxt = myCanvas.getContext("2d");
-
-function drawInlineSVG(ctx, rawSVG, callback) {
-
-    var svg = new Blob([rawSVG], {type:"image/svg+xml;charset=utf-8"}),
-        domURL = self.URL || self.webkitURL || self,
-        url = domURL.createObjectURL(svg),
-        img = new Image;
-
-    img.onload = function () {
-        ctx.drawImage(this, 0, 0);
-        domURL.revokeObjectURL(url);
-        callback(this);
-    };
-
-    img.src = url;
-}
-
-// usage:
-drawInlineSVG(ctxt, svgText, function() {
-    console.log(canvas.toDataURL());  // -> PNG
-    alert("see console for output...");
-});
-*/
