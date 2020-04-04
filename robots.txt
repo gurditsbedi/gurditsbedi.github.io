@@ -1,0 +1,4 @@
+Sitemap: https://gurditsbedi.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: gurditsbedi.github.io

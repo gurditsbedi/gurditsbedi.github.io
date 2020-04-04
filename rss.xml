@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Gurdit Singh Bedi</title><link>https://gurditsbedi.github.io/</link><description>
+Indian Computer Science Post Graduate student at ISI,
+passionate about Machine Learning and likes playing AntiChess!
+</description><atom:link href="https://gurditsbedi.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2020 &lt;a href="mailto:gurditsbedi@gmail.com"&gt;Gurdit Singh Bedi&lt;/a&gt; </copyright><lastBuildDate>Sat, 04 Apr 2020 16:01:13 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A C Macro for debugging</title><link>https://gurditsbedi.github.io/posts/a-c-macro-for-debugging/</link><dc:creator>Gurdit Singh Bedi</dc:creator><description>&lt;div&gt;&lt;p&gt;C is a great language. It is taught in &lt;a href="https://cs50.harvard.edu/college/2020/spring/weeks/1/"&gt;many&lt;/a&gt;
+&lt;a href="https://www.isical.ac.in/~pdslab/"&gt;colleges&lt;/a&gt;
+worldwide and &lt;a href="https://www.coursera.org/courses?query=c%20programming"&gt;online&lt;/a&gt;.
+Again it is still &lt;a href="https://web.archive.org/web/20200311090526/https://redmonk.com/sogrady/2020/02/28/language-rankings-1-20/"&gt;quite
+popular&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Debugging is a key thing is programming. Leaving printf debugging aside,
+gdb is a great debugger for c. It also has a nice active
+&lt;a href="https://www.gdbgui.com/"&gt;fronted&lt;/a&gt; being developed independently.
+But sometimes we need a little more than printf.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://gurditsbedi.github.io/posts/a-c-macro-for-debugging/"&gt;Read more…&lt;/a&gt; (1 min remaining to read)&lt;/p&gt;&lt;/div&gt;</description><category>c</category><category>debugging</category><guid>https://gurditsbedi.github.io/posts/a-c-macro-for-debugging/</guid><pubDate>Sat, 04 Apr 2020 14:00:48 GMT</pubDate></item></channel></rss>
