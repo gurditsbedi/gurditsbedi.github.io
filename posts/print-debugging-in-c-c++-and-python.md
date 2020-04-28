@@ -124,7 +124,3 @@ city = 'Kolkata'
 Here is a great
 [post on f-string debugging](https://tirkarthi.github.io/programming/2019/05/08/f-string-debugging.html).
 
-
-
-
-
