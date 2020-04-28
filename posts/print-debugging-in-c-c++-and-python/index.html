@@ -4,12 +4,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gurdit Singh Bedi · A C Macro for debugging </title>
+<title>Gurdit Singh Bedi · Print debugging in C, C++ and Python </title>
 <link href="../../assets/css/all-nocdn.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700%7CAbril+Fatface">
 <meta content="#5670d4" name="theme-color">
 <link rel="alternate" type="application/rss+xml" title="RSS" href="../../rss.xml">
-<link rel="canonical" href="https://gurditsbedi.github.io/posts/a-c-macro-for-debugging/">
+<link rel="canonical" href="https://gurditsbedi.github.io/posts/print-debugging-in-c-c%2B%2B-and-python/">
 <!--[if lt IE 9]><script src="../../assets/js/html5.js"></script><![endif]--><meta name="author" content="Gurdit Singh Bedi">
 </head>
 <body class="theme-base-0c">
@@ -48,28 +48,29 @@ passionate about Machine Learning and likes playing AntiChess!
     </div>
 
     <div class="content container" id="content">
-<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><h1 class="post-title p-name"><a href="." class="u-url">A C Macro for debugging</a></h1>
+<article class="post-text h-entry hentry postpage" itemscope="itemscope" itemtype="http://schema.org/Article"><h1 class="post-title p-name"><a href="../print-debugging-in-c-c%2B%2B-and-python/" class="u-url">Print debugging in C, C++ and Python</a></h1>
 
     <span class="post-date">
-      <time class="published dt-published" datetime="2020-04-04T19:30:48+05:30" itemprop="datePublished" title="2020-04-04 19:30">2020-04-04 19:30</time></span>
+      <time class="published dt-published" datetime="2020-04-19T17:17:04+05:30" itemprop="datePublished" title="2020-04-19 17:17">2020-04-19 17:17</time></span>
 
     
     
 
     <div class="e-content entry-content" itemprop="articleBody text">
     <div>
-<p>C is a great language. It is taught in <a href="https://cs50.harvard.edu/college/2020/spring/weeks/1/">many</a>
-<a href="https://www.isical.ac.in/~pdslab/">colleges</a>
-worldwide and <a href="https://www.coursera.org/courses?query=c%20programming">online</a>.
-Again it is still <a href="https://web.archive.org/web/20200311090526/https://redmonk.com/sogrady/2020/02/28/language-rankings-1-20/">quite
-popular</a>.</p>
-<p>Debugging is a key thing is programming. Leaving printf debugging aside,
-gdb is a great debugger for c. It also has a nice active
-<a href="https://www.gdbgui.com/">fronted</a> being developed independently.
-But sometimes we need a little more than printf.</p>
+<h2>Intro</h2>
+<p>Print debugging is key thing, whether it is in the begining of learning
+or at a pro level programming.  C language is mainly
+found <a href="https://www.isical.ac.in/~pdslab/">in</a> <a href="https://cs50.harvard.edu/college/2020/spring/weeks/1/">academia</a>
+and in great project such as the linux kernel, git etc.
+C++ is a top choice in competitive coding and Python is the language
+used in servers, machine learning, AI and what not.</p>
+<p>Print statements in Python and C++'s cout are easy to write statements
+which help in debugging, but a little modification can improve the
+experienece.</p>
 <!-- TEASER_END -->
 
-<h2>Here is something,</h2>
+<h2>C-lang</h2>
 <p>Here is the macro:</p>
 <pre class="code literal-block"><span></span><code><span class="cp">#define trace_format(x) \</span>
 <span class="cp">    _Generic((x), \</span>
@@ -108,7 +109,6 @@ a helper macro, <code>trace</code> is the real thing.  Just use
 brackets, followed by the <strong>variable name</strong> and its <strong>value</strong>.</p>
 <p>Great things about this macro is that, we don't need to worry about the format
 specifier, and we get the variable name also.</p>
-<h2>Bonus Tip</h2>
 <p>In some cases, we may need to nullify this <code>trace</code> macro. This can be achieved
 by surrounding the existing macro with some lines.</p>
 <pre class="code literal-block"><span></span><code><span class="cp">#define DEBUG</span>
@@ -136,11 +136,39 @@ by surrounding the existing macro with some lines.</p>
 <p>Now if we remove the <code>#define DEBUG</code> (first line) line of this code segment and any output
 produced by <code>trace</code> macro will be nullified. Putting the line back will make the
 macro work again. We can simply comment in and out the line.</p>
+<p>The above trace macro is limited to the types defined in the macro.
+Giving a unknown type to the macro will create errors. It is to note that
+one can modify the macro or the typecast the variable to get around the problem.</p>
+<h2>C++</h2>
+<p>I found this in a code submission on some competitive coding problem submission.</p>
+<pre class="code literal-block"><span></span><code><span class="cp">#define trace(x) cerr &lt;&lt; "[#" &lt;&lt; __LINE__ &lt;&lt; "] " &lt;&lt; #x &lt;&lt; " = " &lt;&lt; (x) &lt;&lt; '\n'</span>
+</code></pre>
+
+
+<p>The output is in the same format as above.</p>
+<h2>Python</h2>
+<p>Python3.8 has include f-string based debugging.</p>
+<pre class="code literal-block"><span></span><code><span class="n">city</span> <span class="o">=</span> <span class="s2">"Kolkata"</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">"{city=}"</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s2">"{city = }"</span><span class="p">)</span>
+</code></pre>
+
+
+<p>Outputs:</p>
+<pre class="code literal-block"><span></span><code><span class="n">city</span><span class="o">=</span><span class="s1">'Kolkata'</span>
+<span class="n">city</span> <span class="o">=</span> <span class="s1">'Kolkata'</span>
+</code></pre>
+
+
+<p>Here is a great
+<a href="https://tirkarthi.github.io/programming/2019/05/08/f-string-debugging.html">post on f-string debugging</a>.</p>
 </div>
     </div>
     <aside class="postpromonav"><nav><p itemprop="keywords" class="tags">
             <span class="tag"><a class="p-category" href="../../categories/c/" rel="tag">c</a></span>
+            <span class="tag"><a class="p-category" href="../../categories/c%2B%2B/" rel="tag">c++</a></span>
             <span class="tag"><a class="p-category" href="../../categories/debugging/" rel="tag">debugging</a></span>
+            <span class="tag"><a class="p-category" href="../../categories/python/" rel="tag">python</a></span>
       </p>
 
     

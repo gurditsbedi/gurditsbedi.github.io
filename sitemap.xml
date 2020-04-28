@@ -15,11 +15,15 @@
  </url>
  <url>
   <loc>https://gurditsbedi.github.io/archive.html</loc>
-  <lastmod>2020-04-04T16:16:00Z</lastmod>
+  <lastmod>2020-04-28T12:04:00Z</lastmod>
  </url>
  <url>
   <loc>https://gurditsbedi.github.io/categories/</loc>
-  <lastmod>2020-04-04T15:41:00Z</lastmod>
+  <lastmod>2020-04-26T17:28:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://gurditsbedi.github.io/categories/c%2B%2B/</loc>
+  <lastmod>2020-04-26T17:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://gurditsbedi.github.io/categories/c/</loc>
@@ -28,6 +32,10 @@
  <url>
   <loc>https://gurditsbedi.github.io/categories/debugging/</loc>
   <lastmod>2020-04-04T14:23:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://gurditsbedi.github.io/categories/python/</loc>
+  <lastmod>2020-04-26T17:28:00Z</lastmod>
  </url>
  <url>
   <loc>https://gurditsbedi.github.io/galleries/</loc>
@@ -50,63 +58,7 @@
   <lastmod>2020-04-04T16:16:00Z</lastmod>
  </url>
  <url>
-  <loc>https://gurditsbedi.github.io/pages/about-nikola/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/bootstrap-demo/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/charts/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/creating-a-theme/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/dr-nikolas-vendetta/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/extending/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/handbook/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/internals/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/listings-demo/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/path-handlers/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/quickref/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/quickstart/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/social_buttons/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/pages/theming/</loc>
-  <lastmod>2020-04-04T13:39:00Z</lastmod>
- </url>
- <url>
-  <loc>https://gurditsbedi.github.io/posts/a-c-macro-for-debugging/</loc>
-  <lastmod>2020-04-04T15:41:00Z</lastmod>
+  <loc>https://gurditsbedi.github.io/posts/print-debugging-in-c-c%2B%2B-and-python/</loc>
+  <lastmod>2020-04-28T12:03:00Z</lastmod>
  </url>
 </urlset>

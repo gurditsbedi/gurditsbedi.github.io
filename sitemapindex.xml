@@ -6,12 +6,20 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://gurditsbedi.github.io/categories/c%2B%2B.xml</loc>
+  <lastmod>2020-04-28T12:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://gurditsbedi.github.io/categories/c.xml</loc>
-  <lastmod>2020-04-04T16:01:00Z</lastmod>
+  <lastmod>2020-04-28T12:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://gurditsbedi.github.io/categories/debugging.xml</loc>
-  <lastmod>2020-04-04T16:01:00Z</lastmod>
+  <lastmod>2020-04-28T12:12:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://gurditsbedi.github.io/categories/python.xml</loc>
+  <lastmod>2020-04-28T12:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://gurditsbedi.github.io/galleries/demo/rss.xml</loc>
@@ -23,10 +31,10 @@
  </sitemap>
  <sitemap>
   <loc>https://gurditsbedi.github.io/rss.xml</loc>
-  <lastmod>2020-04-04T16:01:00Z</lastmod>
+  <lastmod>2020-04-28T12:12:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://gurditsbedi.github.io/sitemap.xml</loc>
-  <lastmod>2020-04-04T16:16:00Z</lastmod>
+  <lastmod>2020-04-28T12:14:00Z</lastmod>
  </sitemap>
 </sitemapindex>
