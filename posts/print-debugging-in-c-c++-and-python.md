@@ -1,29 +1,30 @@
 <!--
-.. title: A C Macro for debugging
-.. slug: a-c-macro-for-debugging
-.. date: 2020-04-04 19:30:48 UTC+05:30
-.. tags: c, debugging
+.. title: Print debugging in C, C++ and Python
+.. slug: print-debugging-in-c-c++-and-python
+.. date: 2020-04-19 17:17:04 UTC+05:30
+.. tags: c, c++, python, debugging
 .. category:
 .. link:
 .. description:
 .. type: text
 -->
+
 # Intro
 
-C is a great language. It is taught in [many](https://cs50.harvard.edu/college/2020/spring/weeks/1/)
-[colleges](https://www.isical.ac.in/~pdslab/)
-worldwide and [online](https://www.coursera.org/courses?query=c%20programming).
-Again it is still [quite
-popular](https://web.archive.org/web/20200311090526/https://redmonk.com/sogrady/2020/02/28/language-rankings-1-20/).
+Print debugging is key thing, whether it is in the begining of learning
+or at a pro level programming.  C language is mainly
+found [in](https://www.isical.ac.in/~pdslab/) [academia](https://cs50.harvard.edu/college/2020/spring/weeks/1/)
+and in great project such as the linux kernel, git etc.
+C++ is a top choice in competitive coding and Python is the language
+used in servers, machine learning, AI and what not.
 
-Debugging is a key thing is programming. Leaving printf debugging aside,
-gdb is a great debugger for c. It also has a nice active
-[fronted](https://www.gdbgui.com/) being developed independently.
-But sometimes we need a little more than printf.
+Print statements in Python and C++'s cout are easy to write statements
+which help in debugging, but a little modification can improve the
+experienece.
 
 <!-- TEASER_END -->
 
-# Here is something,
+# C-lang
 
 Here is the macro:
 ```c
@@ -65,8 +66,6 @@ brackets, followed by the **variable name** and its **value**.
 Great things about this macro is that, we don't need to worry about the format
 specifier, and we get the variable name also.
 
-# Bonus Tip
-
 In some cases, we may need to nullify this `trace` macro. This can be achieved
 by surrounding the existing macro with some lines.
 
@@ -95,3 +94,37 @@ by surrounding the existing macro with some lines.
 Now if we remove the `#define DEBUG` (first line) line of this code segment and any output
 produced by `trace` macro will be nullified. Putting the line back will make the
 macro work again. We can simply comment in and out the line.
+
+The above trace macro is limited to the types defined in the macro.
+Giving a unknown type to the macro will create errors. It is to note that
+one can modify the macro or the typecast the variable to get around the problem.
+
+# C++
+I found this in a code submission on some competitive coding problem submission.
+```cpp
+#define trace(x) cerr << "[#" << __LINE__ << "] " << #x << " = " << (x) << '\n'
+```
+The output is in the same format as above.
+
+# Python
+Python3.8 has include f-string based debugging.
+
+```python3
+city = "Kolkata"
+print(f"{city=}")
+print(f"{city = }")
+```
+
+Outputs:
+```
+city='Kolkata'
+city = 'Kolkata'
+```
+
+Here is a great
+[post on f-string debugging](https://tirkarthi.github.io/programming/2019/05/08/f-string-debugging.html).
+
+
+
+
+
